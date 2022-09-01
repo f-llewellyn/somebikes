@@ -5,6 +5,7 @@ import Button from "../components/Button";
 // import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import Hero from "../components/Hero";
 import PartDetails from "../components/PartDetails";
+import TableHeader from "../components/TableHeader";
 
 const Home: NextPage = () => {
 	return (
@@ -19,11 +20,10 @@ const Home: NextPage = () => {
 			</Head>
 			<Hero title="Bike Builder" />
 			<div className="container mx-auto py-4">
+				<TableHeader />
+				<PartDetails partType="Frame" />
 				<PartDetails partType="Fork" />
-				{/* <PartDetails partType="Fork" />
-				<PartDetails partType="Wheelset" />
-				<PartDetails partType="Brakes" />
-				<PartDetails partType="Fork" /> */}
+				<PartDetails partType="Fork" />
 			</div>
 		</div>
 	);

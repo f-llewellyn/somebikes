@@ -1,6 +1,7 @@
 import Button from "./Button";
 import * as partTypes from "../types/bikeParts";
 import { FaRegTrashAlt } from "react-icons/fa";
+import Image from "next/image";
 
 export interface PartDetailsProps {
 	partType: string;
@@ -15,14 +16,17 @@ export interface PartDetailsProps {
 
 const PartDetails = ({ partType, itemDetails }: PartDetailsProps) => {
 	return (
-		<section className="bg-gray-50 shadow-md rounded p-4 xl:grid xl:grid-cols-10 items-center xl:p-0 xl:px-4 xl:gap-8">
+		<section className="bg-gray-50 shadow-md rounded p-4 mb-8 xl:mb-0 xl:grid xl:grid-cols-10 items-center xl:p-0 xl:px-4 xl:gap-8 xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-t-2">
 			{!itemDetails ? (
 				<>
 					<span className="text-2xl font-bold">{partType}</span>
 					<div className="flex items-center justify-around gap-4 py-4 lg:justify-start lg:gap-8 lg:ml-8 xl:ml-0 xl:col-span-4">
-						<img
+						<Image
 							src="/img/lyrik-square.png"
-							style={{ maxHeight: "3rem" }}
+							width="100%"
+							height="70"
+							objectFit="contain"
+							alt="Lyrik Ultimate"
 						/>
 						<span className="text-xl font-medium text-end">
 							Rockshox Lyrik Ultimate (180mm)
@@ -30,33 +34,36 @@ const PartDetails = ({ partType, itemDetails }: PartDetailsProps) => {
 					</div>
 					<div className="lg:flex items-center xl:grid xl:grid-cols-5 xl:col-span-5 xl:gap-8">
 						<div className="flex flex-wrap gap-4 w-full justify-between lg:justify-start lg:gap-16 xl:grid xl:grid-cols-3 xl:col-span-3 xl:items-start xl:gap-8">
-							<div>
-								<span className="text-md font-medium ">
+							<div className="flex items-center">
+								<span className="text-md font-medium xl:hidden">
 									Base:
 								</span>
 								<br />
 								<span>£500.00</span>
 							</div>
-							<div>
-								<span className="text-md font-medium ">
+							<div className="flex items-center">
+								<span className="text-md font-medium xl:hidden">
 									Quantity:
 								</span>
 								<br />
 								<span>1</span>
 							</div>
-							<div>
-								<span className="text-md font-medium ">
+							<div className="flex items-center">
+								<span className="text-md font-medium xl:hidden">
 									Retailer:
 								</span>
-								<img
+								<Image
 									src="/img/crc-logo.png"
-									style={{ maxHeight: "1.25rem" }}
+									width="100%"
+									height="20"
+									objectFit="contain"
+									alt="crc logo"
 								/>
 							</div>
 						</div>
 						<div className="flex justify-between items-center mt-2 lg:mt-0 lg:gap-8 xl:grid xl:grid-cols-2 xl:col-span-2">
-							<div>
-								<span className="text-lg font-medium ">
+							<div className="flex items-center">
+								<span className="text-lg font-medium xl:hidden">
 									Cost:
 								</span>
 								<br />
